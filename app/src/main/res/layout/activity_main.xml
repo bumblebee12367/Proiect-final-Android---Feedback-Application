@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/texttitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Please enter the details below!"
+        android:textSize="24sp"
+        android:fontFamily="sans-serif-black"
+
+        />
+
+    <android.inputmethodservice.ExtractEditText
+        android:id="@+id/edittext_name"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/texttitle"
+        android:layout_centerHorizontal="true"
+        android:hint="Name"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:inputType="textPersonName"
+
+
+        />
+
+    <android.inputmethodservice.ExtractEditText
+        android:id="@+id/edittext_email"
+        android:layout_width="275dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edittext_name"
+        android:layout_centerHorizontal="true"
+        android:hint="Email"
+        android:gravity="center_horizontal"
+        android:textSize="20sp"
+        android:inputType="textEmailAddress"
+
+
+        />
+
+    <android.inputmethodservice.ExtractEditText
+        android:id="@+id/edittext_Feedback"
+        android:layout_width="277dp"
+        android:layout_height="173dp"
+        android:layout_below="@+id/edittext_email"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:hint="Feedback"
+        android:inputType="text"
+        android:textSize="20sp"
+        />
+
+    <RatingBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ratingbar"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:layout_below="@id/edittext_Feedback"
+        android:layout_centerHorizontal="true"
+        />
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/submit"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ratingbar"
+        android:backgroundTint="@color/black"
+        android:text="Submit"
+
+
+
+        />
+</RelativeLayout>
