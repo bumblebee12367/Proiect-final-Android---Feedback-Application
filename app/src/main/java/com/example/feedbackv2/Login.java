@@ -24,13 +24,21 @@ TextView mRegister;
         setContentView(R.layout.activity_login);
 
         mRegister=(TextView)findViewById(R.id.registertext);
+        mLogin=findViewById(R.id.login);
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),Register.class));
                 finish();
             }
-        });
 
+        });
+        mLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                finish();
+            }
+        });
     }
 }
