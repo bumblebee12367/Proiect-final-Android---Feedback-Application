@@ -20,6 +20,7 @@ import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class Login extends AppCompatActivity {
 EditText mEmail, mPassword;
@@ -27,7 +28,7 @@ Button mLogin;
 TextView mRegister, mGuest;
 FirebaseAuth fAuth;
 DatabaseReference mDataBase;
-
+User user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
