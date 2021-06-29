@@ -80,4 +80,28 @@
         android:fontFamily="@font/cousine"
         android:text="New here? Click here to create a new acoount."
         android:textColor="@color/black"/>
+
+    <TextView
+        android:id="@+id/or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/registertext"
+        android:layout_centerHorizontal="true"
+        android:text="OR"
+        android:fontFamily="@font/cousine"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        />
+
+    <TextView
+        android:id="@+id/guest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/or"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/cousine"
+        android:text="Give your feedback here! "
+        android:textColor="@color/black"
+        />
 </RelativeLayout>
