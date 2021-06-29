@@ -1,17 +1,19 @@
 package com.example.feedbackv2;
 
 public class User {
-    private String username;
+    private String name;
     private String email;
     private int age;
     private String subject;
+    private String password;
+
 
     public String getUsername() {
-        return username;
+        return name;
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.name = username;
     }
 
     public String getEmail() {
@@ -38,13 +40,35 @@ public class User {
         this.subject = subject;
     }
 
-    public User() {
+    public String getName() {
+        return name;
     }
 
-    public User(String username, String email, int age, String subject) {
-        this.username = username;
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public User() {
+        this.name = "";
+        this.email = "";
+        this.age = -1;
+        this.subject = "";
+        this.password = "";
+    }
+
+    public User(String name, String email, String password) {
+        this.name = name;
         this.email = email;
-        this.age = age;
-        this.subject = subject;
+        this.age = -1;
+        this.subject = "";
+        this.password = password;
     }
 }
