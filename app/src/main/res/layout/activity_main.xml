@@ -29,6 +29,7 @@
         android:layout_below="@+id/texttitle"
         android:layout_centerHorizontal="true"
         android:hint="Name"
+        android:textColor="@color/black"
         android:textColorHint="@color/turqoise_pal"
         android:gravity="center_horizontal"
         android:textSize="20sp"
@@ -40,6 +41,7 @@
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/edittext_email"
         android:layout_width="275dp"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edittext_name"
         android:layout_centerHorizontal="true"
@@ -58,6 +60,7 @@
         android:layout_width="277dp"
         android:layout_height="173dp"
         android:layout_below="@+id/edittext_email"
+        android:textColor="@color/black"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:hint="Feedback"
