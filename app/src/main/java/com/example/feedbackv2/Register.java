@@ -19,12 +19,15 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
 public class Register extends AppCompatActivity {
 EditText mName, mEmail, mPassword, mConfirmPass;
-
+User user;
+DatabaseReference mDataBase;
 Button mRegisterBtn;
 TextView mLoginText;
 FirebaseAuth fAuth;
@@ -44,6 +47,8 @@ FirebaseAuth fAuth;
         mConfirmPass = findViewById(R.id.edittext_confirmpassword);
         mRegisterBtn = findViewById(R.id.registerbtn);
         mLoginText=(TextView)findViewById(R.id.logintext);
+        mDataBase= FirebaseDatabase.getInstance("https://feedback-9a043-default-rtdb.europe-west1.firebasedatabase.app/").getReference().child("users");
+        user=new User();
         mLoginText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,6 +90,18 @@ FirebaseAuth fAuth;
                     mConfirmPass.setError("Password doesn't match!");
                 }
 
+                user.setName(name);
+                user.setPassword(password);
+                user.setSubject("");
+                user.setEmail(email);
+                user.setAge(-1);
+
+                String key = mDataBase.push().getKey();
+
+                //verifici ca key != null
+
+                mDataBase.child(key).setValue(user);
+
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -97,6 +114,8 @@ FirebaseAuth fAuth;
                         }
                     }
                 });
+
+
             }
         });
     }
